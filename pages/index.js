@@ -1,7 +1,25 @@
-export default function HomePage() {
+import useSWR from "swr";
+
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
+const URL = "https://example-apis.vercel.app/api/art";
+
+export default function ArtPieceList() {
+  const { data } = useSWR(URL, fetcher);
+  console.log({ data });
+
   return (
-    <div>
-      <h1>Hello from Next.js</h1>
-    </div>
+    <>
+      <ul>
+        {data.map((art) => {
+          return (
+            <li key={art.slug}>
+              {art.name}
+              {art.artist}
+            </li>
+          );
+        })}
+        <li>Art Pieces</li>
+      </ul>
+    </>
   );
 }

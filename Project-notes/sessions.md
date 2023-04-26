@@ -11,4 +11,4 @@ React Immutable State
 https://github.com/spiced-academy/savory-web-dev/blob/main/sessions/react-immutable-state/react-immutable-state.md
 
 React Data Fetching
-https://github.com/spiced-academy/savory-web-dev/blob/main/sessions/react-immutable-state/react-immutable-state.md
+https://github.com/spiced-academy/savory-web-dev/blob/main/sessions/react-data-fetching/react-data-fetching.md
