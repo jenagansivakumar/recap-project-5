@@ -1,5 +1,4 @@
 import useSWR from "swr";
-import Image from "next/image";
 import ArtPieceList from "../components/ArtPieceList";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -12,7 +11,7 @@ export default function HomePage() {
   return (
     <>
       <h1>List of All Art Pieces</h1>
-      <ArtPieceList />
+      <ArtPieceList pieces={data} />
     </>
   );
 }
