@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 export default function ArtPiecePreview({ image, title, artist, altTag }) {
+  console.table({ image, title, artist, altTag });
   return (
     <article>
       <p>{title}</p>
