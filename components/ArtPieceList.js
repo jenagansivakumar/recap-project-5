@@ -1,20 +1,21 @@
-import useSWR from "swr";
+import React from "react";
+import ArtPiecePreview from "./ArtPiecePreview";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
-const URL = "https://example-apis.vercel.app/api/art";
-
-export default function ArtPieceList() {
-  const { data } = useSWR(URL, fetcher);
-  console.log({ data });
-
+export default function ArtPieceList({ pieces }) {
   return (
-    <>
-      <ul>
-        {data.map((art) => {
-          return <li key={art.slug}></li>;
-        })}
-        <li>Art Pieces</li>
-      </ul>
-    </>
+    <ul>
+      {pieces?.map((piece) => {
+        return (
+          <li key={piece.slug}>
+            <ArtPiecePreview
+              image={piece.imageSource}
+              title={piece.name}
+              artist={piece.artist}
+              altTag={piece.name}
+            />
+          </li>
+        );
+      })}
+    </ul>
   );
 }
