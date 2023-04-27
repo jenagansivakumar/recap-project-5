@@ -1,21 +1,25 @@
 import React from "react";
 import styled from "styled-components";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 export default function Spotlight({ image, artist }) {
   return (
-    <StyledSpotlightWrapper>
-      <h1>Art Pick of the Day</h1>
-      <StyledSpotlightImage
-        src={image}
-        width={400}
-        height={400}
-        alt="alt text"
-        className="spotlight__image"
-      />
-      <StyledSpotlightArtist className="artPiecePreview__artist">
-        {artist}
-      </StyledSpotlightArtist>
-    </StyledSpotlightWrapper>
+    <>
+      <StyledSpotlightWrapper>
+        <h1>Art Pick of the Day</h1>
+        <StyledSpotlightImage
+          src={image}
+          width={400}
+          height={400}
+          alt="alt text"
+          className="spotlight__image"
+        />
+        <StyledSpotlightArtist className="artPiecePreview__artist">
+          {artist}
+        </StyledSpotlightArtist>
+      </StyledSpotlightWrapper>
+      <FavoriteButton />
+    </>
   );
 }
 
