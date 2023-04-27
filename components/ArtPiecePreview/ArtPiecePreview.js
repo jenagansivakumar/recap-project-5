@@ -1,17 +1,21 @@
 import React from "react";
 import Image from "next/image";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import { useState } from "react";
 
 export default function ArtPiecePreview({
   image,
   title,
   artist,
   altTag,
-  onToggleFavorite,
   isFavorite,
   slug,
 }) {
-  console.table({ image, title, artist, altTag });
+  console.table({ image, title, artist, altTag, isFavorite, slug });
+  const [isFavoriteState, setIsFavoriteState] = useState(isFavorite);
+  function toggle() {
+    setIsFavoriteState(!isFavoriteState);
+  }
   return (
     <>
       <article>
@@ -26,8 +30,8 @@ export default function ArtPiecePreview({
         <p className="artPiecePreview__artist"> {artist} </p>
       </article>
       <FavoriteButton
-        onToggleFavorite={onToggleFavorite}
-        isFavorite={isFavorite}
+        toggleFavorite={toggle}
+        isFavorite={isFavoriteState}
         slug={slug}
       />
     </>
