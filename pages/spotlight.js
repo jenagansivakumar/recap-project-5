@@ -16,7 +16,7 @@ export default function SpotlightPage() {
 
   return (
     <div>
-      <h1>Art Pick of the Day</h1>
+      {/* <h1>Art Pick of the Day</h1> */}
       <Spotlight image={piece.imageSource} artist={piece.artist} />;
     </div>
   );

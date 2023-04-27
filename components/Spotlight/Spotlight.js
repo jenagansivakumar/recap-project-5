@@ -4,10 +4,11 @@ import styled from "styled-components";
 export default function Spotlight({ image, artist }) {
   return (
     <StyledSpotlightWrapper>
+      <h1>Art Pick of the Day</h1>
       <StyledSpotlightImage
         src={image}
-        width={600}
-        height={600}
+        width={400}
+        height={400}
         alt="alt text"
         className="spotlight__image"
       />
@@ -31,6 +32,5 @@ const StyledSpotlightImage = styled.img`
 
 const StyledSpotlightArtist = styled.p`
   font-size: 25px;
-  font-weight: bold;
   margin-top: 16px;
 `;
