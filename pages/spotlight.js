@@ -1,5 +1,6 @@
 import useSWR from "swr";
 import Spotlight from "../components/Spotlight/Spotlight";
+import FavoriteButton from "../components/FavoriteButton/FavoriteButton";
 
 const URL = "https://example-apis.vercel.app/api/art";
 
@@ -17,7 +18,7 @@ export default function SpotlightPage() {
   return (
     <div>
       {/* <h1>Art Pick of the Day</h1> */}
-      <Spotlight image={piece.imageSource} artist={piece.artist} />;
+      <Spotlight image={piece.imageSource} artist={piece.artist} />
     </div>
   );
 }

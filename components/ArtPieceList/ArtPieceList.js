@@ -2,25 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 import Link from "next/link";
+// import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 export default function ArtPieceList({ pieces }) {
   return (
-    <StyledUl>
-      {pieces?.map((piece) => {
-        return (
-          <li key={piece.slug}>
-            <Link href={`art-pieces/${piece.slug}`}>
-              <ArtPiecePreview
-                image={piece.imageSource}
-                title={piece.name}
-                artist={piece.artist}
-                altTag={piece.name}
-              />
-            </Link>
-          </li>
-        );
-      })}
-    </StyledUl>
+    <>
+      <StyledUl>
+        {pieces?.map((piece) => {
+          return (
+            <li key={piece.slug}>
+              <a>
+                <Link href={`art-pieces/${piece.slug}`}>
+                  <ArtPiecePreview
+                    image={piece.imageSource}
+                    title={piece.name}
+                    artist={piece.artist}
+                    altTag={piece.name}
+                  />
+                </Link>
+              </a>
+            </li>
+          );
+        })}
+      </StyledUl>
+    </>
   );
 }
 
@@ -35,6 +40,11 @@ const StyledUl = styled.ul`
 
     li {
       display: flex;
+    }
+
+    li a {
+      text-decoration: none;
+      color: black;
     }
 
     .artPiecePreview__image {
