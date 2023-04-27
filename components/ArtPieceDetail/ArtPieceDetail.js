@@ -5,7 +5,16 @@
 import styled from "styled-components";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-export default function ArtPieceDetail({ image, title, artist, year, genre }) {
+export default function ArtPieceDetail({
+  image,
+  title,
+  artist,
+  year,
+  genre,
+  onToggleFavorite,
+  isFavorite,
+  slug,
+}) {
   return (
     <>
       <ArtDetails>
@@ -20,7 +29,11 @@ export default function ArtPieceDetail({ image, title, artist, year, genre }) {
         />
         <p>{genre}</p>
         <p>{year}</p>
-        <FavoriteButton />
+        <FavoriteButton
+          isFavorite={isFavorite}
+          onToggleFavorite={onToggleFavorite}
+          slug={slug}
+        />
         <StyledDetailButton href="/" className="artPieceDetail_button">
           Back
         </StyledDetailButton>
