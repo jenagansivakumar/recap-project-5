@@ -12,8 +12,8 @@ export default function FavoriteButton({ isFavorite, toggleFavorite }) {
 const StyledButton = styled.button`
    {
     border-radius: 50%;
-    border: 5px solid lightgrey;
-    background-color: lightgrey;
+    border: 5px solid #ffc5c8;
+    background-color: #ffc5c8;
     font-weight: bold;
     font-size: 20px;
   }

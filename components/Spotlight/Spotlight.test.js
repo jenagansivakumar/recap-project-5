@@ -26,3 +26,9 @@ test("image of art piece is displayed", () => {
   const artist = screen.getByText(artistName);
   expect(artist).toBeInTheDocument();
 });
+
+test("favorite button is displayed", () => {
+  render(<Spotlight />);
+  const button = screen.getByRole("button", { name: "💘" });
+  expect(button).toBeInTheDocument();
+});

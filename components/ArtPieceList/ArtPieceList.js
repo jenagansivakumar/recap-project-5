@@ -86,8 +86,8 @@ const StyledLink = styled.a`
     align-items: center;
     font-size: 15px;
     // font-weight: bold;
-    border: 5px solid #fd7779;
-    background-color: #fd7779;
+    border: 5px solid #ffc5c8;
+    background-color: #ffc5c8;
     border-radius: 5px;
     width: 100px;
     box-shadow: 5px 5px 5px grey;

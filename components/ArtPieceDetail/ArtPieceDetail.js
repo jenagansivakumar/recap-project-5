@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import { useState } from "react";
 
 export default function ArtPieceDetail({
   image,
@@ -7,10 +8,12 @@ export default function ArtPieceDetail({
   artist,
   year,
   genre,
-  onToggleFavorite,
   isFavorite,
-  slug,
 }) {
+  const [isFavoriteState, setIsFavoriteState] = useState(isFavorite);
+  function toggle() {
+    setIsFavoriteState(!isFavoriteState);
+  }
   return (
     <>
       <ArtDetails>
@@ -25,11 +28,7 @@ export default function ArtPieceDetail({
         />
         <p>{genre}</p>
         <p>{year}</p>
-        <FavoriteButton
-          isFavorite={isFavorite}
-          onToggleFavorite={onToggleFavorite}
-          slug={slug}
-        />
+        <FavoriteButton toggleFavorite={toggle} isFavorite={isFavoriteState} />
       </ArtDetails>
       <StyledDetailButton href="/" className="artPieceDetail_button">
         Back to all Artpieces
