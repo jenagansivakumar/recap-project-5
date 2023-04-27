@@ -1,7 +1,3 @@
-// Create the component ArtPieceDetails
-//  ArtPieceDetails props: image, title, artist, year, genre
-// import Image from "next/image";
-// import Link from "next/link";
 import styled from "styled-components";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
@@ -34,10 +30,10 @@ export default function ArtPieceDetail({
           onToggleFavorite={onToggleFavorite}
           slug={slug}
         />
-        <StyledDetailButton href="/" className="artPieceDetail_button">
-          Back
-        </StyledDetailButton>
       </ArtDetails>
+      <StyledDetailButton href="/" className="artPieceDetail_button">
+        Back to all Artpieces
+      </StyledDetailButton>
     </>
   );
 }
@@ -67,10 +63,11 @@ const StyledDetailImage = styled.img`
 const StyledDetailButton = styled.a`
   font-size: 20px;
   text-decoration: none;
-  border: 5px solid #fd7779;
-  border-radius: 5px;
-  background: #fd7779;
-  padding: 10px;
+  // border: 5px solid #fd7779;
+  // border-radius: 5px;
+  // background: #fd7779;
+  // padding: 10px;
   color: black;
   font-weight: bold;
+  margin-left: 20px;
 `;

@@ -2,7 +2,15 @@ import React from "react";
 import Image from "next/image";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-export default function ArtPiecePreview({ image, title, artist, altTag }) {
+export default function ArtPiecePreview({
+  image,
+  title,
+  artist,
+  altTag,
+  onToggleFavorite,
+  isFavorite,
+  slug,
+}) {
   console.table({ image, title, artist, altTag });
   return (
     <>
@@ -17,7 +25,11 @@ export default function ArtPiecePreview({ image, title, artist, altTag }) {
         <p className="artPiecePreview__title">{title}</p>
         <p className="artPiecePreview__artist"> {artist} </p>
       </article>
-      <FavoriteButton />
+      <FavoriteButton
+        onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
+        slug={slug}
+      />
     </>
   );
 }

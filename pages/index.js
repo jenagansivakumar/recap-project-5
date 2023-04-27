@@ -10,7 +10,6 @@ export default function HomePage() {
 
   return (
     <>
-      <h1>All Art Pieces</h1>
       <ArtPieceList pieces={data} />
     </>
   );
