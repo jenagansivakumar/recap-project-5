@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
+import Link from "next/link";
 
 export default function ArtPieceList({ pieces }) {
   return (
@@ -8,12 +9,14 @@ export default function ArtPieceList({ pieces }) {
       {pieces?.map((piece) => {
         return (
           <li key={piece.slug}>
-            <ArtPiecePreview
-              image={piece.imageSource}
-              title={piece.name}
-              artist={piece.artist}
-              altTag={piece.name}
-            />
+            <Link href={`art-pieces/${piece.slug}`}>
+              <ArtPiecePreview
+                image={piece.imageSource}
+                title={piece.name}
+                artist={piece.artist}
+                altTag={piece.name}
+              />
+            </Link>
           </li>
         );
       })}
