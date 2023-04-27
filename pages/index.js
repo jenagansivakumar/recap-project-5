@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import ArtPieceList from "../components/ArtPieceList";
+import ArtPieceList from "../components/ArtPieceList/ArtPieceList";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const URL = "https://example-apis.vercel.app/api/art";
@@ -10,7 +10,7 @@ export default function HomePage() {
 
   return (
     <>
-      <h1>List of All Art Pieces</h1>
+      <h1>All Art Pieces</h1>
       <ArtPieceList pieces={data} />
     </>
   );
