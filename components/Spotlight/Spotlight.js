@@ -6,7 +6,7 @@ export default function Spotlight({ image, artist }) {
   return (
     <>
       <StyledSpotlightWrapper>
-        <h1>Art Pick of the Day</h1>
+        <h1>Artpiece of the Day</h1>
         <StyledSpotlightImage
           src={image}
           width={400}
@@ -18,7 +18,9 @@ export default function Spotlight({ image, artist }) {
           {artist}
         </StyledSpotlightArtist>
       </StyledSpotlightWrapper>
-      <FavoriteButton />
+      <StyledFavoriteButton className="spotlight__favoriteButton">
+        <FavoriteButton />
+      </StyledFavoriteButton>
     </>
   );
 }
@@ -37,4 +39,12 @@ const StyledSpotlightImage = styled.img`
 const StyledSpotlightArtist = styled.p`
   font-size: 25px;
   margin-top: 16px;
+`;
+
+const StyledFavoriteButton = styled.span`
+   {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
