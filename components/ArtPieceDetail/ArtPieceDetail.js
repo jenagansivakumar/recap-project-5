@@ -6,9 +6,6 @@ import Link from "next/link";
 export default function ArtPieceDetail({ image, title, artist, year, genre }) {
   return (
     <div className="artPieceDetail__wrapper">
-      <Link href="/art-pieces" className="artPieceDetail_button">
-        Back
-      </Link>
       <h2>{title}</h2>
       <p>{artist}</p>
       <Image
@@ -20,6 +17,9 @@ export default function ArtPieceDetail({ image, title, artist, year, genre }) {
       />
       <p>{genre}</p>
       <p>{year}</p>
+      <Link href="/art-pieces" className="artPieceDetail_button">
+        Back
+      </Link>
     </div>
   );
 }

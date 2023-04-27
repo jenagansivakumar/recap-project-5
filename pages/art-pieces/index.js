@@ -9,17 +9,3 @@ export default function ArtPiecesPage({}) {
   console.log("fetch art pieces page:", { data });
   return <ArtPieceList pieces={data} />;
 }
-
-{
-  /* <div>
-<h1>Art Detail</h1>
-<ArtPieceDetail
-  title={piece.name}
-  year={piece.year}
-  genre={piece.genre}
-  image={piece.imageSource}
-  artist={piece.artist}
-/>
-;
-</div>; */
-}
