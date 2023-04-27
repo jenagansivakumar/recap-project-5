@@ -44,6 +44,12 @@ test("displays the art piece's year", () => {
 
 test("displays a 'Back' button", () => {
   render(<ArtPieceDetail />);
-  const button = screen.getByRole("link", { name: "Back" });
+  const button = screen.getByText("Back to all Artpieces");
+  expect(button).toBeInTheDocument();
+});
+
+test("displays a favorite button", () => {
+  render(<ArtPieceDetail />);
+  const button = screen.getByRole("button", { name: "💘" });
   expect(button).toBeInTheDocument();
 });
