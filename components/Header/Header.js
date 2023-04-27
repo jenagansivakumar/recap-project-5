@@ -8,7 +8,6 @@ export default function Header() {
       <nav>
         <Link href={"/"}>Home</Link>
         <Link href={"/spotlight"}>Spotlight</Link>
-        <Link href={"/art-pieces"}>Art Piece Detail</Link>
         <Link href={"/favorites"}>Favorites</Link>
       </nav>
     </StyledHeader>
