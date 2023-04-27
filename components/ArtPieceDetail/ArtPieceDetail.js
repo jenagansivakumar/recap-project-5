@@ -17,7 +17,7 @@ export default function ArtPieceDetail({ image, title, artist, year, genre }) {
       />
       <p>{genre}</p>
       <p>{year}</p>
-      <Link href="/art-pieces" className="artPieceDetail_button">
+      <Link href="/" className="artPieceDetail_button">
         Back
       </Link>
     </div>

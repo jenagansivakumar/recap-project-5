@@ -20,7 +20,7 @@ export default function DetailPage({ pieces }) {
 
   return (
     <ArtPieceDetail
-      name={piece.name}
+      title={piece.name}
       artist={piece.artist}
       year={piece.year}
       genre={piece.genre}
