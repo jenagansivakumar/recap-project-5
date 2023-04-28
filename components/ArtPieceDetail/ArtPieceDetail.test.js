@@ -50,6 +50,6 @@ test("displays a 'Back' button", () => {
 
 test("displays a favorite button", () => {
   render(<ArtPieceDetail />);
-  const button = screen.getByRole("button", { name: "💘" });
+  const button = screen.getByRole("button", { name: "💔" });
   expect(button).toBeInTheDocument();
 });
