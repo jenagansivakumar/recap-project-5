@@ -5,7 +5,13 @@ import FavoriteButton from "../components/FavoriteButton/FavoriteButton";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const URL = "https://example-apis.vercel.app/api/art";
 
-export default function SpotlightPage() {
+export default function SpotlightPage({
+  onToggleFavorite,
+  isFavorite,
+  slug,
+  image,
+  artist,
+}) {
   const { data } = useSWR(URL);
   console.log("data", data);
 
@@ -19,7 +25,9 @@ export default function SpotlightPage() {
   return (
     <div>
       <Spotlight
-        isFavorite={false}
+        onToggleFavorite={onToggleFavorite}
+        isFavorite={piece.isFavorite}
+        slug={piece.slug}
         image={piece.imageSource}
         artist={piece.artist}
       />
