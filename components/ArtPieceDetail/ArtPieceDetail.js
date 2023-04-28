@@ -9,6 +9,8 @@ export default function ArtPieceDetail({
   year,
   genre,
   isFavorite,
+  onToggleFavorite,
+  slug,
 }) {
   const [isFavoriteState, setIsFavoriteState] = useState(isFavorite);
   function toggle() {
@@ -28,7 +30,11 @@ export default function ArtPieceDetail({
         />
         <p>{genre}</p>
         <p>{year}</p>
-        <FavoriteButton toggleFavorite={toggle} isFavorite={isFavoriteState} />
+        <FavoriteButton
+          onToggleFavorite={onToggleFavorite}
+          isFavorite={isFavorite}
+          slug={slug}
+        />
       </ArtDetails>
       <StyledDetailButton href="/" className="artPieceDetail_button">
         Back to all Artpieces

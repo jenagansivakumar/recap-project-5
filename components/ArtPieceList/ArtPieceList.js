@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ArtPiecePreview from "../ArtPiecePreview/ArtPiecePreview";
 import Link from "next/link";
 
-export default function ArtPieceList({ pieces }) {
+export default function ArtPieceList({ pieces, onToggleFavorite, isFavorite }) {
   return (
     <>
       <StyledHeadline>All Art Pieces</StyledHeadline>
@@ -17,8 +17,9 @@ export default function ArtPieceList({ pieces }) {
                   title={piece.name}
                   artist={piece.artist}
                   altTag={piece.name}
-                  isFavorite={false}
+                  isFavorite={piece.isFavorite}
                   slug={piece.slug}
+                  onToggleFavorite={onToggleFavorite}
                 />
                 <br></br>
                 <br></br>

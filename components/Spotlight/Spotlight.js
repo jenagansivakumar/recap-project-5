@@ -3,7 +3,13 @@ import styled from "styled-components";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 import { useState } from "react";
 
-export default function Spotlight({ image, artist, isFavorite }) {
+export default function Spotlight({
+  image,
+  artist,
+  isFavorite,
+  onToggleFavorite,
+  slug,
+}) {
   const [isFavoriteState, setIsFavoriteState] = useState(isFavorite);
   function toggle() {
     setIsFavoriteState(!isFavoriteState);
@@ -24,7 +30,11 @@ export default function Spotlight({ image, artist, isFavorite }) {
         </StyledSpotlightArtist>
       </StyledSpotlightWrapper>
       <StyledFavoriteButton className="spotlight__favoriteButton">
-        <FavoriteButton toggleFavorite={toggle} isFavorite={isFavoriteState} />
+        <FavoriteButton
+          onToggleFavorite={onToggleFavorite}
+          isFavorite={isFavorite}
+          slug={slug}
+        />
       </StyledFavoriteButton>
     </>
   );

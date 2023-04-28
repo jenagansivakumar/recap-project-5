@@ -10,15 +10,16 @@ export default function App({ Component, pageProps }) {
 
   const [artPiecesInfo, setArtPiecesInfo] = useState([]);
 
-  function handleToggleFavorite({ slug }) {
-    setArtPiecesInfo(
-      artPiecesInfo.map((artPiece) => {
+  function handleToggleFavorite(slug) {
+    console.log(slug);
+    setArtPiecesInfo((current) => {
+      return current.map((artPiece) => {
         if (artPiece.slug === slug) {
           return { ...artPiece, isFavorite: !artPiece.isFavorite };
         }
         return artPiece;
-      })
-    );
+      });
+    });
   }
 
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function App({ Component, pageProps }) {
     }
   }, [data]);
 
+  console.log("artpieces info in APP: ", artPiecesInfo);
   return (
     <>
       <GlobalStyle />

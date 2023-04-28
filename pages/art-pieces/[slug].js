@@ -5,7 +5,11 @@ import useSWR from "swr";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 const URL = "https://example-apis.vercel.app/api/art";
 
-export default function DetailPage({ artPiecesInfo, onToggleFavorite }) {
+export default function DetailPage({
+  artPiecesInfo,
+  onToggleFavorite,
+  isFavorite,
+}) {
   const { data } = useSWR(URL, fetcher);
   console.log("fetch art pieces page:", { data });
 
@@ -22,6 +26,8 @@ export default function DetailPage({ artPiecesInfo, onToggleFavorite }) {
       year={piece.year}
       genre={piece.genre}
       image={piece.imageSource}
+      isFavorite={piece.isFavorite}
+      slug={piece.slug}
       onToggleFavorite={onToggleFavorite}
     />
   );

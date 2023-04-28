@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function FavoriteButton({ isFavorite, toggleFavorite }) {
+export default function FavoriteButton({ slug, isFavorite, onToggleFavorite }) {
   return (
-    <StyledButton onClick={() => toggleFavorite()}>
+    <StyledButton onClick={() => onToggleFavorite(slug)}>
       {isFavorite ? "💘" : "💔"}
     </StyledButton>
   );

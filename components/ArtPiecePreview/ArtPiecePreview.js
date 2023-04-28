@@ -10,8 +10,9 @@ export default function ArtPiecePreview({
   altTag,
   isFavorite,
   slug,
+  onToggleFavorite,
 }) {
-  console.table({ image, title, artist, altTag, isFavorite, slug });
+  // console.table({ image, title, artist, altTag, isFavorite, slug });
   const [isFavoriteState, setIsFavoriteState] = useState(isFavorite);
   function toggle() {
     setIsFavoriteState(!isFavoriteState);
@@ -21,6 +22,7 @@ export default function ArtPiecePreview({
       <article>
         <Image
           src={image}
+          x
           width={250}
           height={250}
           alt={altTag}
@@ -30,8 +32,8 @@ export default function ArtPiecePreview({
         <p className="artPiecePreview__artist"> {artist} </p>
       </article>
       <FavoriteButton
-        toggleFavorite={toggle}
-        isFavorite={isFavoriteState}
+        onToggleFavorite={onToggleFavorite}
+        isFavorite={isFavorite}
         slug={slug}
       />
     </>
