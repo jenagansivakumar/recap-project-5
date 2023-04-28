@@ -20,7 +20,7 @@ test("image of art piece is displayed", () => {
   expect(screen.getByRole("img")).toBeInTheDocument();
 });
 
-test("image of art piece is displayed", () => {
+test("name of artist is displayed", () => {
   const artistName = "Steve Johnson";
   render(<Spotlight image={piece.imageSource} artist={artistName} />);
   const artist = screen.getByText(artistName);
@@ -29,6 +29,6 @@ test("image of art piece is displayed", () => {
 
 test("favorite button is displayed", () => {
   render(<Spotlight />);
-  const button = screen.getByRole("button", { name: "💘" });
+  const button = screen.getByRole("button", { name: "💔" });
   expect(button).toBeInTheDocument();
 });
