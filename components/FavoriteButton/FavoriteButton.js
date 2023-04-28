@@ -4,7 +4,7 @@ import styled from "styled-components";
 export default function FavoriteButton({ isFavorite, toggleFavorite }) {
   return (
     <StyledButton onClick={() => toggleFavorite()}>
-      {isFavorite ? "💔" : "💘"}
+      {isFavorite ? "💘" : "💔"}
     </StyledButton>
   );
 }
